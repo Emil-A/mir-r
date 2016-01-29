@@ -1,0 +1,39 @@
+<HomeScreen>:
+    FloatLayout:
+        Button:
+            text: "Host"
+            pos_hint: {'x': .2, 'y': .4}
+            size_hint: .2, .1
+            on_press: root.manager.current = 'host'
+        Button:
+            text: "Client"
+            pos_hint: {'x': .41, 'y': .4}
+            size_hint: .2, .1
+            on_press: root.manager.current = 'client'
+
+<HostScreen>:
+    FloatLayout:
+        Label:
+            text: "Hosting"
+            pos_hint: {'x': .2, 'y': .4}
+            size_hint: .4, .2
+
+<ClientScreen>:
+    FloatLayout:
+        Button:
+            text: "Connect"
+            pos_hint: {'x': .2, 'y': .4}
+            size_hint: .2, .1
+            on_press: root.test(ip.text)
+        TextInput:
+            id: ip
+            pos_hint: {'x': .41, 'y': .4}
+            size_hint: .4, .1
+
+<MenuScreen>:
+    BoxLayout:
+        Button:
+            text: 'Goto settings'
+            on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Quit'
